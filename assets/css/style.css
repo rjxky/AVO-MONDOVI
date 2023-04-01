@@ -1456,3 +1456,18 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+/************************************************/
+#phoneNo:invalid + #valid::after {
+  position: absolute;
+  content: "✖";
+  padding-left: 5px;
+  color: #8b0000;
+}
+
+#phoneNo:valid + #valid::after {
+  position: absolute;
+  content: "✓";
+  padding-left: 5px;
+  color: #009000;
+}

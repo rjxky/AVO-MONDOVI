@@ -5,6 +5,8 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+import comuniData from '../../forms/comuni.json' assert { type: 'json' };
+
 (function() {
   "use strict";
 
@@ -58,7 +60,18 @@
       }
     })
   }
-  window.addEventListener('load', navbarlinksActive)
+  
+  window.addEventListener('load', function(){
+    navbarlinksActive()
+    let dropdown = document.getElementById('comunilist');
+
+    for (let i = 0; i < comuniData.length; i++) {
+      let option = document.createElement('option');
+      option.text = comuniData[i].nome;
+      option.value = comuniData[i].nome;
+      dropdown.append(option);
+    }
+  })
   onscroll(document, navbarlinksActive)
 
   /**
@@ -162,6 +175,21 @@
       }
     }
   });
+
+  const inputHandler = function(e) {
+    if (e.target.value.length == 3) {
+      phoneNo.value = phoneNo.value + "-" ;
+    }
+    if (e.target.value.length == 7) {
+      phoneNo.value = phoneNo.value + "-" ;
+    }
+  }
+
+  const phoneNo = document.getElementById('phoneNo');
+  phoneNo.addEventListener('input', inputHandler);
+  phoneNo.addEventListener('propertychange', inputHandler);
+
+  
 
   /**
    * Hero carousel indicators
