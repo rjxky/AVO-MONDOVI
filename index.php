@@ -35,9 +35,8 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
+<?php include 'example.php';?>
 <body>
-
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -170,7 +169,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-calendar4-week"></i></div>
+              <div class="icon"><i class="bi bi-person-heart"></i></div>
               <h4 class="title"><a href="">La nostra missione</a></h4>
               <p class="description">AVO Mondovì sviluppa e realizza progetti, anche con servizio domiciliare, a favore di soggetti fragili, svantaggiati, soli portando conforto là dove è più necessario.</p>
             </div>
@@ -216,43 +215,39 @@
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container">
-
+        <div class="section-title">
+          <h2>Requisiti per diventare un volontario AVO</h2>
+          <p>L’ A.V.O. organizza corsi di preparazione per diventare volontari ogni anno. Le iscrizioni vengono aperte circa due mesi prima dall’inizio di ciascun corso.</p>
+        </div>
         <div class="row no-gutters">
 
           <div class="col-lg-4 col-md-6 content-item">
             <span>01</span>
-            <h4>Lorem Ipsum</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            <h4>Età</h4>
+            <p>Per diventare volontario AVO bisogna avere un'età compresa tra i 18 e i 70 anni.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item">
             <span>02</span>
-            <h4>Repellat Nihil</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            <h4>Condizioni fisiche e mentali</h4>
+            <p>Un volontario AVO deve avere delle buone condizioni psicofisiche.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item">
             <span>03</span>
-            <h4> Ad ad velit qui</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            <h4>Serietà, equilibrio, discrezione, intuito e capacità di relazione.</h4>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item">
             <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
+            <h4>Preparazione</h4>
+            <p>L'AVO richiede una buona preparazione generale per diventare un volontario.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item">
             <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
+            <h4>Disponibilità</h4>
+            <p>È richiesta la disponibilità a svolgere almeno un turno settimanale in ospedale (mattino o pomeriggio) e a partecipare agli incontri di formazione permanente.</p>
           </div>
 
         </div>
@@ -260,7 +255,7 @@
       </div>
     </section><!-- End Why Us Section -->
 
-    <!-- ======= Our Clients Section ======= -->
+    <!-- 
     <section id="clients" class="clients">
       <div class="container">
 
@@ -284,7 +279,7 @@
         </div>
 
       </div>
-    </section><!-- End Our Clients Section -->
+    </section> -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -519,11 +514,16 @@
                 <input type="date" class="form-control" name="datanascita" id="datanascita" required>
               </div>
               <div class="form-group mt-3">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <label for="name">Luogo di nascita</label>
+                <select name="comuni">
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <label for="name">Numero di telefono</label>
+                <input type="number" class="form-control" name="phone" id="phone" required>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Caricamento</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
