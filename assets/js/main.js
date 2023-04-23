@@ -5,6 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 import comuniData from '../../forms/comuni.json' assert { type: 'json' };
 
 (function() {
