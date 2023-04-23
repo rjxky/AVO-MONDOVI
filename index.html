@@ -551,22 +551,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit" onclick="sendMail()">Send Message</button></div>
-              <script>
-                function sendMail() {
-                  let name = document.getElementById('name').value;
-                  let surname = document.getElementById('surname').value;
-                  let email = document.getElementById('email').value;
-                  let datanascita = document.getElementById('datanascita').value;
-                  let luogonascita = document.getElementById('comuni').value;
-                  let phoneNo = document.getElementById('phoneNo').value;
-                  window.location='mailto:ricky.marcarino@gmail.com?subject=Richiesta Volontario AVO Mondovì&body=Nome: ' + name + 
-                  '%20%3A%0D%0ACognome: ' + surname +
-                  '%20%3A%0D%0AData di nascita: ' + datanascita + 
-                  '%20%3A%0D%0ALuogo di nascita: ' + luogonascita + 
-                  '%20%3A%0D%0ANumero di telefono: ' + phoneNo + '%20%3A';
-                }
-              </script>
+              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
 
