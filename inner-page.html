@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inner Page - Green Bootstrap Template</title>
+  <title>AVO Mondovì - Eventi</title>
+  <meta name="robots" content="noindex">
+  <meta name="DC.title" content="AVO Mondovì - Eventi">
   <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="avo, avo mondovì, avo mondovi, associazione volontari ospedalieri, volontariato avo, avo associazione, regolamento avo, associazione avo napoli, come diventare volontario avo, avo vicenza, avo definizione, avo cuneo, avo alessandria" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -42,14 +44,12 @@
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">info@example.com</a>
-        <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55
+        <i class="bi bi-envelope-fill"></i><a href="mailto:avomondovì@libero.it">avomondovì@libero.it</a>
+        <i class="bi bi-phone-fill phone-icon"></i> +39 334 111 2372
       </div>
       <div class="social-links d-none d-md-block">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://www.facebook.com/groups/365519215277725/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/avo.mondovi?igshid=NTc4MTIwNjQ2YQ==" class="instagram"><i class="bi bi-instagram"></i></a>
       </div>
     </div>
   </section>
@@ -58,18 +58,20 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Green</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">AVO MONDOVI</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#hero">HOME</a></li>
+          <li><a class="nav-link scrollto" href="#about">CHI SIAMO</a></li>
+          <li><a class="nav-link scrollto" href="#services">DIVENTA UN VOLONTARIO AVO</a></li>
+          <li><a class="nav-link scrollto" href="#team">CONTATTI</a></li>
+          <li><a class="nav-link scrollto" href="#contact">DOVE SIAMO</a></li>
+          <li><a class="nav-link active" href="./inner-page.html">I NOSTRI EVENTI</a></li>
+
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -85,9 +87,7 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          </li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -102,10 +102,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>I nostri eventi</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
+            <li>Eventi</li>
           </ol>
         </div>
 
@@ -114,35 +114,74 @@
 
     <section class="inner-page">
       <div class="container">
-        <p>
-          Example inner page template
+        <div class="item-container" onclick="window.dialog.showModal();">
+          <div class="img-container">
+              <img src="./assets/img/avo.mondovi/avo.mondovi-07062023-0004.webp" alt="Event image">
+          </div>
+
+          <div class="body-container">
+              <div class="overlay"></div>
+
+              <div class="event-info">
+                  <p class="title">INCONTRO AVO</p>
+                  <div class="separator"></div>
+                  <p class="info" style="text-align: center;">Sede della Croce Rossa di Mondovì - via Croce Rossa 4</p>
+                  <p class="price">In corso</p>
+
+                  <div class="additional-info">
+                      <p class="info">
+                          <i class="far fa-calendar-alt"></i>
+                          22 - 24 - 31 maggio 2023 <br> 5 - 9 giugno 2023 <br> dalle 17.30 alle 19.30
+                      </p>
+
+                      <p class="info description">
+                        Saluti del presidente AVO Mondovl Giuseppe Bertone, del Direttore Generale ASL CN1 dottor Giuseppe <span>...</span>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <dialog id="dialog">
+        <h2><b>Incontro AVO</b></h2>
+        <p class="info" style="text-align: center;">
+          <i class="far fa-calendar-alt"></i>
+          <b>22 - 24 - 31 maggio 2023 <br> 5 - 9 giugno 2023 <br> dalle 17.30 alle 19.30</b>
         </p>
+        <ol style="font-size: 0.8rem;">
+          <li><span class="number_divider">1</span>Saluti del presidente AVO Mondovì Giuseppe Bertone, del Direttore Generale ASL CN1 dottor Giuseppe 
+            Guerra e della Direzione Sanitaria con il dottor Maurizio Ippoliti. Relazione del Presidente AVO e 
+            della Vicepresidente AVO Mondovì su origine, valori, significato del volontariato Avo, organizzazione. 
+            missione e importanza della partecipazione alla vita associativa. Intervento su primo soccorso a cura dell'
+             Infermiera Daniela Bisi;</li>
+          <li><span class="number_divider">2</span>Etica del volontario: consapevolezza e conoscenza di sé, come approcciarsi alle persone fragili e 
+            come gestire le emozioni con la psicologa dott. Michela Boccabella Norme di igiene, profilassi, vaccini, post-covid, malattie infettive con
+             Coordinatrice infermieristica Daniela Bisi;</li>
+          <li><span class="number_divider">3</span>La relazione di aiuto: comunicazione e ascolto per rendere efficace e terapeutico il volontariato, 
+            le aspettative e le motivazioni del volontario Avo con la psicologa Dott. Michela Boccabella. Fattive collaborazioni tra volontari, medici, 
+            infermieri, oss con la Dottoressa Vera Bignone;</li>
+          <li><span class="number_divider">4</span>Le attività di Avo Mondovì' nelle varie Rsa e a domicilio. Interverranno responsabili Rsa e per il volontariato 
+            domiciliare il Presidente Avo Mondovi e Responsabili CSSM.</li>
+          <li><span class="number_divider">5</span>Essere volontario con persone particolarmente fragili con intervento coordinatori Centro psichiatrico di Ceva e 
+            coordinatrici Dea Mondovì. Aspetti medico legali, norme di sicurezza, emergenza, antincendio, antinfortunistica con il Responsabile RSPP di ASL CN1 l'Architetto
+             Maurizio Origlia.</li>
+        </ol>
+        <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+      </dialog>
       </div>
     </section>
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Green</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3>AVO Mondovì</h3>
+      <p>SONO AVO PERCHÉ CREDO NEL VALORE DELLA SOLIDARIETÀ.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
