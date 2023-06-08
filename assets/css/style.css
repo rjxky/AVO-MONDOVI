@@ -1472,7 +1472,7 @@ section {
   color: #009000;
 }
 /************************************************/
-.container {
+.cardContainer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1511,7 +1511,7 @@ section {
 .overlay {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 330px;
   background-color: rgba(24, 83, 122, 0.6);
   opacity: 0;
   transition: height linear 0.4s, opacity linear 0.2s;
@@ -1521,7 +1521,6 @@ section {
   opacity: 1;
   height: 150px;
 }
-
 .event-info {
   background-color: #fff;
   display: flex;
@@ -1598,6 +1597,7 @@ section {
 .item-container:hover .action {
   top: 50px;
 }
+
 
 .action:hover {
   background-color: rgba(255, 255, 255, 0.2);

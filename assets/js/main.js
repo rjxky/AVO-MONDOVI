@@ -10,8 +10,6 @@ import comuniData from '../../forms/comuni.json' assert { type: 'json' };
 
 (function() {
   "use strict";
-
-
   
 
   /**
@@ -294,7 +292,5 @@ import comuniData from '../../forms/comuni.json' assert { type: 'json' };
       clickable: true
     }
   });
-
-  
 
 })()
