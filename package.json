@@ -19,7 +19,8 @@
     }
   ],
   "dependencies": {
-    "jquery": ">=1.7"
+    "jquery": ">=1.7",
+    "plyr": "^3.7.8"
   },
   "demos": [
     "http://tipso.object505.com/"

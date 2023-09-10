@@ -10,7 +10,6 @@ import comuniData from '../../forms/comuni.json' assert { type: 'json' };
 
 (function() {
   "use strict";
-  
 
   /**
    * Easy selector helper function
