@@ -1472,6 +1472,11 @@ section {
   color: #009000;
 }
 /************************************************/
+.video-container {
+	margin: 50px auto;
+	max-width: 500px;
+}
+/************************************************/
 .cardContainer {
   width: 100%;
   display: flex;

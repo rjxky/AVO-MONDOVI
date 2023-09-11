@@ -24,7 +24,7 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="//vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet">
+  <link href="https://cdn.plyr.io/3.7.8/plyr.css" rel="stylesheet"/>
   <!-- Font Awesome -->
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -223,27 +223,38 @@
                 </a>
               </p>
             </video>-->
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" style="display: flex; width: 100%;">
             <br>
-            <h3>AVO, L'AMICO IN PIÙ CHE CONDIVIDE EMOZIONI.</h3>
-            <p class="fst-italic" style="text-align: justify;">
-              Il volontario AVO è vicino alle fragilità degli anziani e degli ammalati, accogliendo i loro bisogni di ascolto e compiendo tutti quei gesti che derivano dal sincero sentimento di solidarietà.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circled"></i> AVO si propone di intervenire attivamente, all’interno delle strutture sanitarie, allo scopo di:</li>
-              <li><i class="bi bi-check-circled"></i> * Contribuire ad umanizzare la vita in ospedale;</li>
-              <li><i class="bi bi-check-circled"></i> * Testimoniare la solidarietà della comunità;</li>
-              <li><i class="bi bi-check-circled"></i> * Offrire ai degenti sostegno nella solitudine e nelle difficoltà.</li>
-            </ul>
-            <p  style="text-align: justify;">
-              L'AVO, ovvero l'Associazione Volontari Ospedalieri, è una delle realtà più importanti e autorevoli nell'ambito del volontariato socio-sanitario. Chiunque voglia dedicare parte del proprio tempo agli ammalati degenti negli ospedali può diventare parte di questa associazione.
-            </p>
+            <div style="width: 80%;">
+              <h3>AVO, L'AMICO IN PIÙ CHE CONDIVIDE EMOZIONI.</h3>
+              <p class="fst-italic" style="text-align: justify;">
+                Il volontario AVO è vicino alle fragilità degli anziani e degli ammalati, accogliendo i loro bisogni di ascolto e compiendo tutti quei gesti che derivano dal sincero sentimento di solidarietà.
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circled"></i> AVO si propone di intervenire attivamente, all’interno delle strutture sanitarie, allo scopo di:</li>
+                <li><i class="bi bi-check-circled"></i> * Contribuire ad umanizzare la vita in ospedale;</li>
+                <li><i class="bi bi-check-circled"></i> * Testimoniare la solidarietà della comunità;</li>
+                <li><i class="bi bi-check-circled"></i> * Offrire ai degenti sostegno nella solitudine e nelle difficoltà.</li>
+              </ul>
+              <p  style="text-align: justify;">
+                L'AVO, ovvero l'Associazione Volontari Ospedalieri, è una delle realtà più importanti e autorevoli nell'ambito del volontariato socio-sanitario. Chiunque voglia dedicare parte del proprio tempo agli ammalati degenti negli ospedali può diventare parte di questa associazione.
+              </p>
+            </div>
+          <div class="video-container" style="width: 70%; margin: 0 auto; padding: 2em;">
+            <video controls crossorigin playsinline poster="assets/img/avo.mondovi/AVO-MONDOVI.jpg" style="width: 100%;">
+               <source src="assets/videos/presentazione.mp4" type="video/mp4" size="1080">
+          
+                <!-- Fallback for browsers that don't support the <video> element -->
+                <a href="assets/videos/presentazione.mp4" download>Download</a>
+            </video>
           </div>
           
+        </div>
           <div style="width: 40%; margin:0 auto; vertical-align: middle;">
-            <video style="width: 100%;" id="player" playsinline controls data-poster="./assets/img/avo.mondovi/AVO-MONDOVI.jpg">
+            <!--<video style="width: 100%;" id="player" playsinline controls data-poster="./assets/img/avo.mondovi/AVO-MONDOVI.jpg">
               <source src="./assets/videos/presentazione.mp4" type="video/mp4" />
-            </video>
+            </video>-->
+            
           </div>
         </div>
 
@@ -588,10 +599,11 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
   <!-- Template Main JS File -->
   <script type="module" src="assets/js/main.js"></script>
-  <script src="//vjs.zencdn.net/8.3.0/video.min.js"></script>
 </body>
 
 </html>
