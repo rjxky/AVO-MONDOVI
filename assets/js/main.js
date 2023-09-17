@@ -7,7 +7,6 @@
 */
 
 import comuniData from '../../forms/comuni.json' assert { type: 'json' };
-import Plyr from 'plyr';
 
 (function() {
   "use strict";
