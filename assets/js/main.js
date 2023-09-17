@@ -7,6 +7,7 @@
 */
 
 import comuniData from '../../forms/comuni.json' assert { type: 'json' };
+import Plyr from 'plyr';
 
 (function() {
   "use strict";
@@ -63,6 +64,13 @@ import comuniData from '../../forms/comuni.json' assert { type: 'json' };
   }
   
   window.addEventListener('load', function(){
+    
+    // Change the second argument to your options:
+    // https://github.com/sampotts/plyr/#options
+    const player = new Plyr('video', {});
+
+    // Expose player so it can be used from the console
+    window.player = player;
     navbarlinksActive()
     let dropdown = document.getElementById('comunilist');
 
