@@ -46,7 +46,10 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+<link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="./src/tipso.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
 
   <!-- =======================================================
   * Template Name: Green
@@ -55,6 +58,39 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -87,9 +123,8 @@
           <li><a class="nav-link scrollto" href="./index.html">HOME</a></li>
           <li><a class="nav-link scrollto" href="./index.html#about">CHI SIAMO</a></li>
           <li><a class="nav-link scrollto" href="./index.html#team">CONTATTI</a></li>
-          <li><a class="nav-link scrollto" href="./index.html#contact">DOVE SIAMO</a></li>
           <li><a class="nav-link" href="./inner-page.html">I NOSTRI EVENTI</a></li>
-          <li><a class="nav-link active" href="./dove-operiamo.html">DOVE OPERIAMO</a></li>
+          <li><a class="nav-link" href="./dove-operiamo.html">DOVE OPERIAMO</a></li>
           <li><a class="nav-link active" href="./ringraziamenti.html">ATTESTATI</a></li>
           <li><a class="nav-link" href="./pensieri.html" style="padding-right: 30px;">PENSIERI</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -123,10 +158,10 @@
       <div class="container">
 
         <div class="justify-content-between align-items-center" style="text-align: center;">
-          <h1>Dove Operiamo</h1>
+          <h1>Ringraziamenti</h1>
           <ol style="text-align: center;">
             <li><a href="index.html">Home</a></li>
-            <li>Dove operiamo</li>
+            <li>Ringraziamenti</li>
           </ol>
         </div>
 
@@ -134,29 +169,55 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page align-items-center" style="display: flex; margin: 0 auto; text-align: center; align-items: center;">
-      <img src="./assets/img/mappa.jpg" style="image-rendering: optimizeQuality; object-fit: cover; width: 20rem; margin-left: 15rem; margin-right: 5rem;">
-        <div style="width: 70%; margin: 0 auto; text-align: left;">
-          <dl>
-            <dt>Domiciliarità</dt>
-            <br>
-            <dt>Mondovì</dt>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/e8UzWrH4LxPR4Kub6">Ospedale "Regina Montis Regalis" Mondovì</a></dd>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/wzxmHbMRZafrJMUL9">Casa Di Riposo Sacra Famiglia</a></dd>
-            <dt>Vicoforte</dt>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/U7fMpMBZFNjjLwpW6">Casa Di Riposo S. Giuseppe</a></dd>
-            <dt>San Michele di Mondovì</dt>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/t3ER6wRkhcdRjwF9A">Casa di Riposo San Michele Arcangelo</a></dd>
-            <dt>Ceva</dt>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/wHx1iN6Dw1uXoWRS9">Ospedale Poveri Infermi Ceva</a></dd>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/wHx1iN6Dw1uXoWRS9">Centro diurno - Via XX settembre, 3</a></dd>
-            <dt>Mombasiglio</dt>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/8vVuMj6ZBurBc3x16">Rsa La casa del sorriso</a></dd>
-            <dt>Garessio</dt>
-            <dd>- <a target="_blank" href="https://maps.app.goo.gl/sWEDUL2hy5dXsJY27">Fondazione Opera Pia Garelli</a></dd>
-          
-          </dl>
+      <div style="display: flex; overflow-x: scroll; width: 80%; align-items: center; margin: 0 auto; ">
+        <div class="container">
+          <div class="card" style="width: 30%;">
+            <img src="https://via.placeholder.com/300" alt="Placeholder Image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">ATTESTATI DI RICONOSCIMENTO</h4>
+              <p class="card-text">Attestati di ringraziamento conferiti ad AVO Mondovì.</p>
+              <a href="#" class="btn btn-primary" onclick="openModal()">Apri pdf</a>
+            </div>
+          </div>
         </div>
-    </div>
+
+<!-- The Modal -->
+<div id="modalAttRingr" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <iframe src="./assets/docs/DOC-20230722-WA0048_.PDF" style="width:100%; height:500px;" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modalAttRingr = document.getElementById("modalAttRingr");
+
+  // Get the button that opens the modal
+  var btn = document.querySelector("button");
+
+  // Get the <span> element that closes the modal
+  var spanAttRingr = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  function openModal() {
+    modalAttRingr.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  function closeModal() {
+    modalAttRingr.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modalAttRingr) {
+      modalAttRingr.style.display = "none";
+    }
+  }
+</script>
+      </div>
     </section>
 
   </main><!-- End #main -->
