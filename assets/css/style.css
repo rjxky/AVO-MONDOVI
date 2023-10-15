@@ -1852,3 +1852,8 @@ dialog ol{
   background-color: #00c2bc;
   cursor: pointer;
 }
+
+.tab {
+  display: inline-block;
+  margin-left: 4em;
+}
