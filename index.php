@@ -9,11 +9,10 @@
   <meta name="DC.title" content="AVO Mondovì">
   <meta content="Sito ufficiale dell'Associazione Volontari Ospedalieri (AVO) di Mondovì (CN). Diventa anche tu un volontario!" name="description">
   <meta content="avo, avo mondovì, avo mondovi, associazione volontari ospedalieri, volontariato avo, avo associazione, regolamento avo, associazione avo napoli, come diventare volontario avo, avo vicenza, avo definizione, avo cuneo, avo alessandria" name="keywords">
-
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/favicon.png" rel="icon">
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -524,9 +523,8 @@
             </div>
 
           </div>
-
           <div id="formAvo" class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="./forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="forms/contact.php" method="post" class="php-email-form" id="contact-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Nome</label>
@@ -567,8 +565,28 @@
                 <div class="error-message"></div>
                 <div class="sent-message">La tua richiesta è stata inviata. Grazie!</div>
               </div>
-              <div class="text-center"><button type="submit">Invia</button></div>
+              <div class="text-center"><button type="submit" onclick="inviaModulo()">Invia</button></div>
             </form>
+            <script>
+function inviaModulo() {
+    // Raccogli i dati del modulo
+    var formData = $('#contact-form').serialize();
+
+      $.ajax({
+         type: 'POST',
+         url: 'forms/contact.php',
+         data: formData,
+         success: function (response) {
+            // Gestisci la risposta del server, ad esempio, mostrando un messaggio di successo
+            $('.sent-message').html('La tua richiesta è stata inviata. Grazie!');
+         },
+         error: function (error) {
+            // Gestisci gli errori, ad esempio, mostrando un messaggio di errore
+            $('.error-message').html('Errore nell\'invio dell\'email.');
+         }
+      });
+}
+</script>
           </div>
 
         </div>
@@ -600,7 +618,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <!-- Template Main JS File -->
   <script type="module" src="assets/js/main.js"></script>
   <script src="//vjs.zencdn.net/8.3.0/video.min.js"></script>
