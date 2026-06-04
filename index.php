@@ -262,7 +262,7 @@
           <div class="col-lg-4 col-md-6 content-item">
             <span>01</span>
             <h4>Età</h4>
-            <p style="text-align: justify;">Per diventare volontario AVO bisogna avere un'età compresa tra i 18 e i 70 anni.</p>
+            <p style="text-align: justify;">Per diventare volontario AVO bisogna avere un'età &gt;18 anni.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item">
@@ -400,7 +400,7 @@
                 <i class='bx bx-dumbbell'></i>
               </div>
               <h4><a href="">Determinazione</a></h4>
-              <p>I suoi volontari (circa 900) prestano servizio nelle strutture con <b>turni giornalieri di 3 ore</b> distribuiti su tutta la settimana.
+              <p>I suoi volontari (circa 90) prestano servizio nelle strutture con <b>turni giornalieri di 3 ore</b> distribuiti su tutta la settimana.
                 Si impegnano a donare il proprio tempo con motivazione, gratuità, competenza e fedeltà, sposando appieno i valori di accoglienza, ascolto, sostegno e condivisione.</p>
             </div>
           </div>
