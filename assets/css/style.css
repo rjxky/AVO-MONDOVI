@@ -481,7 +481,8 @@ h6 {
   color: rgba(255, 255, 255, 0.8);
 }
 
-#hero .carousel-indicators li {
+#hero .carousel-indicators li,
+#hero .carousel-indicators button {
   cursor: pointer;
   background: #fff;
   overflow: hidden;
@@ -493,7 +494,8 @@ h6 {
   transition: 0.3s;
 }
 
-#hero .carousel-indicators li.active {
+#hero .carousel-indicators li.active,
+#hero .carousel-indicators button.active {
   opacity: 1;
   background: #0a9249;
 }
