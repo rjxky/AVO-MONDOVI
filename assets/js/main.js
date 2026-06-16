@@ -116,6 +116,100 @@
         })
         .catch(error => console.warn('Lista comuni non disponibile:', error))
     }
+
+    let instagramFeed = document.getElementById('instagram-feed-grid');
+    let instagramStatus = document.getElementById('instagram-feed-status');
+    if (instagramFeed && instagramStatus) {
+      const feedUrl = instagramFeed.dataset.feedUrl || '/api/instagram-feed.php';
+      const profileUrl = instagramFeed.dataset.profileUrl || 'https://www.instagram.com/avo.mondovi/';
+
+      const formatFeedDate = isoDate => {
+        if (!isoDate) {
+          return ''
+        }
+
+        const date = new Date(isoDate)
+        if (Number.isNaN(date.getTime())) {
+          return ''
+        }
+
+        return new Intl.DateTimeFormat('it-IT', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        }).format(date)
+      }
+
+      const createFeedCard = post => {
+        const link = document.createElement('a')
+        link.className = 'instagram-feed-card'
+        link.href = post.url
+        link.target = '_blank'
+        link.rel = 'noreferrer noopener'
+        link.setAttribute('aria-label', 'Apri il post Instagram')
+
+        const media = document.createElement('div')
+        media.className = 'instagram-feed-media'
+
+        const image = document.createElement('img')
+        image.src = post.image
+        image.alt = post.caption ? post.caption.slice(0, 120) : 'Post Instagram AVO Mondovi'
+        image.loading = 'lazy'
+        media.appendChild(image)
+
+        const badge = document.createElement('span')
+        badge.className = 'instagram-feed-badge'
+        badge.textContent = post.type === 'album' ? 'Album' : post.type === 'video' ? 'Video' : 'Post'
+        media.appendChild(badge)
+
+        const body = document.createElement('div')
+        body.className = 'instagram-feed-body'
+
+        const caption = document.createElement('p')
+        caption.className = 'instagram-feed-caption'
+        caption.textContent = post.caption || 'Apri il post per vedere il contenuto completo su Instagram.'
+
+        const meta = document.createElement('div')
+        meta.className = 'instagram-feed-meta'
+
+        const handle = document.createElement('span')
+        handle.textContent = '@avo.mondovi'
+
+        const date = document.createElement('span')
+        date.textContent = formatFeedDate(post.date_iso)
+
+        meta.append(handle, date)
+        body.append(caption, meta)
+        link.append(media, body)
+
+        return link
+      }
+
+      fetch(feedUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Feed Instagram non disponibile')
+          }
+          return response.json()
+        })
+        .then(data => {
+          if (!data.ok || !Array.isArray(data.posts) || !data.posts.length) {
+            throw new Error('Nessun post disponibile')
+          }
+
+          instagramFeed.innerHTML = ''
+          data.posts.forEach(post => {
+            instagramFeed.appendChild(createFeedCard(post))
+          })
+
+          instagramStatus.textContent = 'Ultimi 10 post pubblicati su Instagram.'
+        })
+        .catch(error => {
+          console.warn('Feed Instagram non disponibile:', error)
+          instagramFeed.innerHTML = ''
+          instagramStatus.innerHTML = 'Impossibile caricare il feed in questo momento. <a href="' + profileUrl + '" target="_blank" rel="noreferrer noopener">Apri il profilo Instagram</a>.'
+        })
+    }
   })
   onscroll(document, navbarlinksActive)
           /*
