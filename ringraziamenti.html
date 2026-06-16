@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>AVO Mondovì - Eventi</title>
-  <meta name="DC.title" content="AVO Mondovì - Eventi">
+  <title>AVO Mondovì - Attestati</title>
+  <meta name="DC.title" content="AVO Mondovì - Attestati">
   <meta content="Sito ufficiale dell'Associazione Volontari Ospedalieri (AVO) di Mondovì (CN). Diventa anche tu un volontario!" name="description">
   <meta content="avo, avo mondovì, avo mondovi, associazione volontari ospedalieri, volontariato avo, avo associazione, regolamento avo, associazione avo napoli, come diventare volontario avo, avo vicenza, avo definizione, avo cuneo, avo alessandria" name="keywords">
 
@@ -24,32 +24,8 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-<!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-  rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
-  rel="stylesheet"
-/>
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="./src/tipso.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-<link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script src="./src/tipso.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
 
   <!-- =======================================================
   * Template Name: Green
@@ -59,36 +35,212 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
+    .certificate-section {
+      padding: 48px 0 72px;
+    }
+
+    .certificate-panel {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    .certificate-card {
+      display: grid;
+      grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 18px 45px rgba(17, 24, 39, 0.12);
+      overflow: hidden;
+    }
+
+    .certificate-preview {
+      min-height: 320px;
+      background: linear-gradient(135deg, rgba(10, 146, 73, 0.12), rgba(10, 146, 73, 0.02));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .certificate-preview-sheet {
+      width: min(100%, 240px);
+      aspect-ratio: 1 / 1.414;
+      background: #fff;
+      border: 1px solid rgba(10, 146, 73, 0.18);
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.16);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 20px 18px;
+      color: #1f2937;
+    }
+
+    .certificate-preview-sheet span {
+      display: block;
+    }
+
+    .certificate-preview-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(10, 146, 73, 0.12);
+      color: #0a9249;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .certificate-preview-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .certificate-preview-lines {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      margin-top: 12px;
+    }
+
+    .certificate-preview-lines span {
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.12);
+    }
+
+    .certificate-preview-lines span:nth-child(1) {
       width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
     }
-    .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
+
+    .certificate-preview-lines span:nth-child(2) {
+      width: 82%;
     }
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+
+    .certificate-preview-lines span:nth-child(3) {
+      width: 90%;
     }
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
+
+    .certificate-preview-footer {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #0a9249;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .certificate-content {
+      padding: 40px 40px 40px 0;
+    }
+
+    .certificate-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #1f2937;
+    }
+
+    .certificate-content p {
+      margin-bottom: 24px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    .certificate-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .certificate-actions .btn {
+      min-width: 170px;
+    }
+
+    .pdf-modal .modal-dialog {
+      max-width: min(1280px, calc(100vw - 32px));
+      margin: 1rem auto;
+    }
+
+    .pdf-modal .modal-content {
+      border: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.35);
+    }
+
+    .pdf-modal .modal-header {
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .pdf-modal .modal-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .pdf-modal .modal-body {
+      background: #f4f6f8;
+      padding: 0;
+    }
+
+    .pdf-frame {
+      display: block;
+      width: 100%;
+      height: min(78vh, 920px);
+      border: 0;
+      background: #fff;
+    }
+
+    .pdf-fallback {
+      padding: 16px 20px 20px;
+      color: #4b5563;
+      background: #fff;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    @media (max-width: 991px) {
+      .certificate-card {
+        grid-template-columns: 1fr;
+      }
+
+      .certificate-content {
+        padding: 0 24px 28px;
+      }
+
+      .certificate-preview {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .certificate-section {
+        padding: 32px 0 56px;
+      }
+
+      .certificate-content h2 {
+        font-size: 1.7rem;
+      }
+
+      .certificate-actions .btn {
+        width: 100%;
+      }
+
+      .pdf-modal .modal-dialog {
+        max-width: calc(100vw - 16px);
+        margin: 0.5rem auto;
+      }
+
+      .pdf-frame {
+        height: 72vh;
+      }
     }
   </style>
 </head>
@@ -168,57 +320,72 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="inner-page align-items-center" style="display: flex; margin: 0 auto; text-align: center; align-items: center; width: 100%;">
-      <div style="display: flex; overflow-x: scroll; width: 80%; align-items: center; margin: 0 auto; ">
-        <div class="container">
-          <div class="card" style="width: 30%;">
-            <img src="https://via.placeholder.com/300" alt="Placeholder Image" style="width:100%">
-            <div class="card-body">
-              <h4 class="card-title">ATTESTATI DI RICONOSCIMENTO</h4>
-              <p class="card-text">Attestati di ringraziamento conferiti ad AVO Mondovì.</p>
-              <a style="cursor: pointer;" class="btn btn-primary" onclick="openModal()">Apri pdf</a>
+    <section class="certificate-section">
+      <div class="certificate-panel">
+        <div class="certificate-card">
+          <div class="certificate-preview" aria-hidden="true">
+            <div class="certificate-preview-sheet">
+              <span class="certificate-preview-mark">
+                <i class="bi bi-award"></i>
+              </span>
+              <div>
+                <span class="certificate-preview-title">Attestati di riconoscimento</span>
+                <div class="certificate-preview-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <span class="certificate-preview-footer">AVO Mondovi</span>
+            </div>
+          </div>
+          <div class="certificate-content">
+            <h2>Attestati di ringraziamento</h2>
+            <p>Raccolta dei riconoscimenti conferiti ad AVO Mondovi. Il documento puo essere aperto in pagina per una lettura rapida oppure scaricato direttamente in PDF.</p>
+            <div class="certificate-actions">
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#attestatiModal">
+                Apri PDF
+              </button>
+              <a class="btn btn-outline-success" href="./assets/docs/DOC-20230722-WA0048_.PDF" target="_blank" rel="noopener noreferrer">
+                Apri in nuova scheda
+              </a>
+              <a class="btn btn-outline-secondary" href="./assets/docs/DOC-20230722-WA0048_.PDF" download>
+                Scarica PDF
+              </a>
             </div>
           </div>
         </div>
-
-<!-- The Modal -->
-        <div id="modalAttRingr" class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <iframe src="./assets/docs/DOC-20230722-WA0048_.PDF" style="width:100%; height:500px;" frameborder="0"></iframe>
-          </div>
-        </div>
-
-        <script>
-          // Get the modal
-          var modalAttRingr = document.getElementById("modalAttRingr");
-
-          // Get the button that opens the modal
-          var btn = document.querySelector("button");
-
-          // Get the <span> element that closes the modal
-          var spanAttRingr = document.getElementsByClassName("close")[0];
-
-          // When the user clicks the button, open the modal 
-          function openModal() {
-            modalAttRingr.style.display = "block";
-          }
-
-          // When the user clicks on <span> (x), close the modal
-          function closeModal() {
-            modalAttRingr.style.display = "none";
-          }
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-            if (event.target == modalAttRingr) {
-              modalAttRingr.style.display = "none";
-            }
-          }
-        </script>
       </div>
     </section>
+
+    <div class="modal fade pdf-modal" id="attestatiModal" tabindex="-1" aria-labelledby="attestatiModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="attestatiModalLabel">Attestati di ringraziamento</h3>
+            <div class="d-flex align-items-center gap-2 ms-auto me-3">
+              <a class="btn btn-sm btn-outline-success" href="./assets/docs/DOC-20230722-WA0048_.PDF" target="_blank" rel="noopener noreferrer">
+                Nuova scheda
+              </a>
+              <a class="btn btn-sm btn-success" href="./assets/docs/DOC-20230722-WA0048_.PDF" download>
+                Scarica
+              </a>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+          </div>
+          <div class="modal-body">
+            <iframe
+              class="pdf-frame"
+              src="./assets/docs/DOC-20230722-WA0048_.PDF#toolbar=1&navpanes=0&scrollbar=1"
+              title="Attestati di ringraziamento AVO Mondovi"
+            ></iframe>
+            <div class="pdf-fallback">
+              Se il PDF non viene visualizzato correttamente nel browser, usa i pulsanti "Nuova scheda" o "Scarica".
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main><!-- End #main -->
 
@@ -243,7 +410,6 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 

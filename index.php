@@ -528,7 +528,7 @@
 
           </div>
           <div id="formAvo" class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" class="php-email-form" id="contact-form">
+            <form action="/api/contact.php" method="post" class="php-email-form" id="contact-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Nome</label>
@@ -549,7 +549,7 @@
               </div>
               <div class="form-group mt-3">
                 <label for="comuni">Luogo di nascita</label>
-                <input type="text" list="comunilist" class="form-control" placeholder="Inserire un comune..." name="comuni" id="comuni">
+                <input type="text" list="comunilist" class="form-control" placeholder="Inserire un comune..." name="luogonascita" id="comuni" required>
                 <datalist id="comunilist">
 
                 </datalist>
@@ -569,27 +569,57 @@
                 <div class="error-message"></div>
                 <div class="sent-message">La tua richiesta è stata inviata. Grazie!</div>
               </div>
-              <div class="text-center"><button type="submit" onclick="inviaModulo()">Invia</button></div>
+              <div class="text-center"><button type="submit">Invia</button></div>
             </form>
             <script>
-function inviaModulo() {
-    // Raccogli i dati del modulo
-    var formData = $('#contact-form').serialize();
+document.addEventListener('DOMContentLoaded', function () {
+  var contactForm = document.getElementById('contact-form');
+  if (!contactForm) {
+    return;
+  }
 
-      $.ajax({
-         type: 'POST',
-         url: 'forms/contact.php',
-         data: formData,
-         success: function (response) {
-            // Gestisci la risposta del server, ad esempio, mostrando un messaggio di successo
-            $('.sent-message').html('La tua richiesta è stata inviata. Grazie!');
-         },
-         error: function (error) {
-            // Gestisci gli errori, ad esempio, mostrando un messaggio di errore
-            $('.error-message').html('Errore nell\'invio dell\'email.');
-         }
+  var loadingMessage = contactForm.querySelector('.loading');
+  var errorMessage = contactForm.querySelector('.error-message');
+  var successMessage = contactForm.querySelector('.sent-message');
+
+  contactForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    loadingMessage.style.display = 'block';
+    errorMessage.style.display = 'none';
+    successMessage.style.display = 'none';
+    errorMessage.textContent = '';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm)
       });
-}
+
+      const result = await response.json().catch(function () {
+        return { ok: false, message: 'Risposta non valida dal server.' };
+      });
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || 'Errore nell\'invio dell\'email.');
+      }
+
+      successMessage.textContent = result.message || 'La tua richiesta è stata inviata. Grazie!';
+      successMessage.style.display = 'block';
+      contactForm.reset();
+    } catch (error) {
+      errorMessage.textContent = error.message || 'Errore nell\'invio dell\'email.';
+      errorMessage.style.display = 'block';
+    } finally {
+      loadingMessage.style.display = 'none';
+    }
+  });
+});
 </script>
           </div>
 
