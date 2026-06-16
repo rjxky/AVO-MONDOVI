@@ -120,7 +120,11 @@
     let instagramFeed = document.getElementById('instagram-feed-grid');
     let instagramStatus = document.getElementById('instagram-feed-status');
     if (instagramFeed && instagramStatus) {
-      const feedUrl = instagramFeed.dataset.feedUrl || '/api/instagram-feed.php';
+      const rawFeedUrls = instagramFeed.dataset.feedUrl || 'https://instagram-feed-api-gamma.vercel.app/api/avo.mondovi,/api/instagram-feed.php';
+      const feedUrls = rawFeedUrls
+        .split(',')
+        .map(url => url.trim())
+        .filter(Boolean)
       const profileUrl = instagramFeed.dataset.profileUrl || 'https://www.instagram.com/avo.mondovi/';
 
       const formatFeedDate = isoDate => {
@@ -185,20 +189,63 @@
         return link
       }
 
-      fetch(feedUrl)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Feed Instagram non disponibile')
-          }
-          return response.json()
-        })
-        .then(data => {
-          if (!data.ok || !Array.isArray(data.posts) || !data.posts.length) {
-            throw new Error('Nessun post disponibile')
-          }
+      const normalizeExternalPost = post => ({
+        url: post.slug ? 'https://www.instagram.com/p/' + post.slug + '/' : '',
+        image: post.image || '',
+        caption: post.description || '',
+        date_iso: post.takenAt || null,
+        type: post.type === 'carousel_album' ? 'album' : post.type === 'video' ? 'video' : 'photo'
+      })
 
+      const normalizeFeedData = data => {
+        if (Array.isArray(data)) {
+          return data
+            .map(normalizeExternalPost)
+            .filter(post => post.url && post.image)
+            .slice(0, 10)
+        }
+
+        if (data && data.ok && Array.isArray(data.posts)) {
+          return data.posts
+            .filter(post => post && post.url && post.image)
+            .slice(0, 10)
+        }
+
+        return []
+      }
+
+      const loadFeed = urls => {
+        if (!urls.length) {
+          return Promise.reject(new Error('Nessuna sorgente feed disponibile'))
+        }
+
+        const [currentUrl, ...nextUrls] = urls
+        return fetch(currentUrl)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Feed Instagram non disponibile')
+            }
+            return response.json()
+          })
+          .then(data => {
+            const posts = normalizeFeedData(data)
+            if (!posts.length) {
+              throw new Error('Nessun post disponibile')
+            }
+            return posts
+          })
+          .catch(error => {
+            if (!nextUrls.length) {
+              throw error
+            }
+            return loadFeed(nextUrls)
+          })
+      }
+
+      loadFeed(feedUrls)
+        .then(posts => {
           instagramFeed.innerHTML = ''
-          data.posts.forEach(post => {
+          posts.forEach(post => {
             instagramFeed.appendChild(createFeedCard(post))
           })
 
