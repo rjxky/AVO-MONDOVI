@@ -63,8 +63,9 @@
   window.addEventListener('load', function(){
     navbarlinksActive()
 
+    let comuniInput = document.getElementById('comuni');
     let dropdown = document.getElementById('comunilist');
-    if (dropdown) {
+    if (dropdown && comuniInput) {
       fetch('forms/comuni.json')
         .then(response => {
           if (!response.ok) {
@@ -73,17 +74,58 @@
           return response.json()
         })
         .then(comuniData => {
+          const comuniNames = comuniData
+            .map(comune => comune.nome)
+            .filter(Boolean)
+
+          const renderComuniOptions = value => {
+            dropdown.innerHTML = ''
+
+            let search = value.trim().toLowerCase()
+            if (search.length < 2) {
+              return
+            }
+
+            comuniNames
+              .filter(nome => nome.toLowerCase().startsWith(search))
+              .slice(0, 12)
+              .forEach(nome => {
+                let option = document.createElement('option');
+                option.text = nome;
+                option.value = nome;
+                dropdown.append(option);
+              })
+          }
+
+          comuniInput.setAttribute('autocomplete', 'off')
+          comuniInput.addEventListener('input', function() {
+            renderComuniOptions(this.value)
+          })
+          comuniInput.addEventListener('focus', function() {
+            renderComuniOptions(this.value)
+          })
+          comuniInput.addEventListener('blur', function() {
+            window.setTimeout(() => {
+              dropdown.innerHTML = ''
+            }, 150)
+          })
+
+          if (comuniInput.value) {
+            renderComuniOptions(comuniInput.value)
+          }
+        })
+        .catch(error => console.warn('Lista comuni non disponibile:', error))
+    }
+  })
+  onscroll(document, navbarlinksActive)
+          /*
           comuniData.forEach(comune => {
             let option = document.createElement('option');
             option.text = comune.nome;
             option.value = comune.nome;
             dropdown.append(option);
           })
-        })
-        .catch(error => console.warn('Lista comuni non disponibile:', error))
-    }
-  })
-  onscroll(document, navbarlinksActive)
+          */
 
   /**
    * Scrolls to an element with header offset
