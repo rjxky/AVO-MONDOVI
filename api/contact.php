@@ -74,10 +74,32 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+$birthDateObject = DateTime::createFromFormat('Y-m-d', $birthDate);
+$today = new DateTime('today');
+$minimumBirthDate = (clone $today)->modify('-16 years');
+
+if (!$birthDateObject || $birthDateObject->format('Y-m-d') !== $birthDate) {
+    http_response_code(422);
+    echo json_encode([
+        'ok' => false,
+        'message' => 'Data di nascita non valida.',
+    ]);
+    exit;
+}
+
+if ($birthDateObject > $minimumBirthDate) {
+    http_response_code(422);
+    echo json_encode([
+        'ok' => false,
+        'message' => 'Per candidarsi bisogna avere almeno 16 anni.',
+    ]);
+    exit;
+}
+
 $smtpHost = (string) smtp_setting('SMTP_HOST', 'SMTP_HOST', 'smtp.libero.it');
 $smtpPort = (int) smtp_setting('SMTP_PORT', 'SMTP_PORT', 465);
 $smtpUsername = (string) smtp_setting('SMTP_USERNAME', 'SMTP_USERNAME', 'avomondovi@libero.it');
-$smtpPassword = (string) smtp_setting('SMTP_PASSWORD', 'SMTP_PASSWORD', '');
+$smtpPassword = (string) smtp_setting('SMTP_PASSWORD', 'SMTP_PASSWORD', 'Avo2026Pesaro@');
 $smtpFromEmail = (string) smtp_setting('SMTP_FROM_EMAIL', 'SMTP_FROM_EMAIL', 'avomondovi@libero.it');
 $smtpFromName = (string) smtp_setting('SMTP_FROM_NAME', 'SMTP_FROM_NAME', 'AVO Mondovi');
 $smtpToEmail = (string) smtp_setting('CONTACT_TO_EMAIL', 'CONTACT_TO_EMAIL', 'avomondovi@libero.it');

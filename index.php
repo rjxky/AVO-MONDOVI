@@ -266,7 +266,7 @@
           <div class="col-lg-4 col-md-6 content-item">
             <span>01</span>
             <h4>Età</h4>
-            <p style="text-align: justify;">Per diventare volontario AVO bisogna avere un'età &gt;18 anni.</p>
+            <p style="text-align: justify;">Per diventare volontario AVO bisogna avere almeno 16 anni, senza limiti massimi di età.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item">
@@ -404,7 +404,7 @@
                 <i class='bx bx-dumbbell'></i>
               </div>
               <h4><a href="">Determinazione</a></h4>
-              <p>I suoi volontari (circa 90) prestano servizio nelle strutture con <b>turni giornalieri di 3 ore</b> distribuiti su tutta la settimana.
+              <p>I suoi volontari (circa 100) prestano servizio nelle strutture con <b>turni giornalieri di 3 ore</b> distribuiti su tutta la settimana.
                 Si impegnano a donare il proprio tempo con motivazione, gratuità, competenza e fedeltà, sposando appieno i valori di accoglienza, ascolto, sostegno e condivisione.</p>
             </div>
           </div>
@@ -574,6 +574,13 @@
             <script>
 document.addEventListener('DOMContentLoaded', function () {
   var contactForm = document.getElementById('contact-form');
+  var birthDateInput = document.getElementById('datanascita');
+  if (birthDateInput) {
+    var maxBirthDate = new Date();
+    maxBirthDate.setFullYear(maxBirthDate.getFullYear() - 16);
+    birthDateInput.max = maxBirthDate.toISOString().split('T')[0];
+  }
+
   if (!contactForm) {
     return;
   }
