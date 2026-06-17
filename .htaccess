@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteRule ^$ index.html [L]
+RewriteRule ^index/?$ index.html [L]
+RewriteRule ^i-nostri-eventi/?$ inner-page.html [L]
+RewriteRule ^dove-operiamo/?$ dove-operiamo.html [L]
+RewriteRule ^attestati/?$ ringraziamenti.html [L]
+RewriteRule ^pensieri/?$ pensieri.html [L]

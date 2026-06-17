@@ -70,7 +70,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">AVO MONDOVÌ</a></h1>
+      <h1 class="logo me-auto"><a href="/">AVO MONDOVÌ</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -80,10 +80,10 @@
           <li><a class="nav-link scrollto" href="#about">CHI SIAMO</a></li>
           <li><a class="nav-link scrollto" href="#team">CONTATTI</a></li>
           <li><a class="nav-link scrollto " href="#contact">DOVE SIAMO</a></li>
-          <li><a class="nav-link" href="./inner-page.html">I NOSTRI EVENTI</a></li>
-          <li><a class="nav-link" href="./dove-operiamo.html">DOVE OPERIAMO</a></li>
-          <li><a class="nav-link" href="./ringraziamenti.html">ATTESTATI</a></li>
-          <li><a class="nav-link" href="./pensieri.html" style="padding-right: 30px;">PENSIERI</a></li>
+          <li><a class="nav-link" href="/i-nostri-eventi">I NOSTRI EVENTI</a></li>
+          <li><a class="nav-link" href="/dove-operiamo">DOVE OPERIAMO</a></li>
+          <li><a class="nav-link" href="/attestati">ATTESTATI</a></li>
+          <li><a class="nav-link" href="/pensieri" style="padding-right: 30px;">PENSIERI</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -512,13 +512,13 @@
               </div>
                 
               <div class="social-icons-btn" style="margin: 0 auto; width: fit-content; padding-bottom: 2rem;">
-                <a class="icons twitter"  href="#">
-                  <i style="background-color: transparent; color: white; margin: 0;" class="bi bi-twitter"></i>
-                </a>
-                <a class="icons facebook"  href="#">
+                <a class="icons facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100094022885427">
                   <i style="background-color: transparent; color: white; margin: 0;" class="bi bi-facebook"></i>
                 </a>
-                <a class="icons instagram"  href="#">
+                <a class="icons whatsapp" target="_blank" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D%252B393341112372%26app%3Dfacebook%26entry_point%3Dpage_cta%26fbclid%3DIwAR1A39s9zr91BHqzL9mXzcGckU8sqSq311qqBGz-plAFS4U_hxKFBmQfXW8&h=AT2e8Rb-PqoKwi_ow4dLOuvsN28Bs-7J1-y9qILHjugKJUvPguv4CbE5VIXd1tRUEKpf3M3_x_PDPOxUvkCH1rsQhTfFJdNfycFOsOfYTEjK29amAXkl_ZMBMXZGP21msd3TIg">
+                  <i style="background-color: transparent; color: white; margin: 0;" class="bi bi-whatsapp"></i>
+                </a>
+                <a class="icons instagram" target="_blank" href="https://instagram.com/avo.mondovi?igshid=NTc4MTIwNjQ2YQ==">
                   <i style="background-color: transparent; color: white; margin: 0;" class="bi bi-instagram"></i>
                 </a>
               </div>
@@ -657,7 +657,6 @@ document.addEventListener('DOMContentLoaded', function () {
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <!-- Template Main JS File -->
